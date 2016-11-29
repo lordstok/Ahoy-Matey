@@ -11,19 +11,22 @@ public class Player : NetworkBehaviour {
 		
 	// Update is called once per frame
 	void Update () {
-		if (isLocalPlayer){
-			//Input handling for local player only				
-			Debug.Log ("H: " + CrossPlatformInputManager.GetAxis("Horizontal"));
-			Debug.Log ("V: " + CrossPlatformInputManager.GetAxis("Vertical"));
-			
-			float translation = CrossPlatformInputManager.GetAxis("Vertical") * speed;
-			float rotation = CrossPlatformInputManager.GetAxis("Horizontal") * rotationSpeed;
-			
-			translation *= Time.deltaTime;
-			rotation *= Time.deltaTime;				
-			
-			transform.Translate (0,0,translation);
-			transform.Rotate(0,rotation,0);
+		if (!isLocalPlayer) {
+			return;
+		}
+		
+		//Input handling for local player only				
+		Debug.Log ("H: " + CrossPlatformInputManager.GetAxis("Horizontal"));
+		Debug.Log ("V: " + CrossPlatformInputManager.GetAxis("Vertical"));
+		
+		float translation = CrossPlatformInputManager.GetAxis("Vertical") * speed;
+		float rotation = CrossPlatformInputManager.GetAxis("Horizontal") * rotationSpeed;
+		
+		translation *= Time.deltaTime;
+		rotation *= Time.deltaTime;				
+		
+		transform.Translate (0,0,translation);
+		transform.Rotate(0,rotation,0);
 		}
 		
 //		Alternative player input control code
