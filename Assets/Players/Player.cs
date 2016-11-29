@@ -8,6 +8,9 @@ public class Player : NetworkBehaviour {
 	public float speed = 10.0f;
 	public float rotationSpeed = 100.0f;
 	
+	public override void OnStartLocalPlayer () {
+		GetComponentInChildren<Camera>().enabled = true;
+	}
 		
 	// Update is called once per frame
 	void Update () {
