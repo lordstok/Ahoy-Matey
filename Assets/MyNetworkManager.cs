@@ -15,10 +15,17 @@ public class MyNetworkManager : NetworkManager {
 
 	public override void OnStartClient(NetworkClient myClient) {
 		Debug.Log (Time.timeSinceLevelLoad + ": Client start requested");
+		InvokeRepeating ("Blinker", 1.0f, 1.0f);
 	}
 
 	public override void OnClientConnect (NetworkConnection conn) {
+		CancelInvoke();
 		Debug.Log (Time.timeSinceLevelLoad + ": Client is connected to IP: " + conn.address);
+
+	}
+
+	void Blinker () {
+		print (".");
 	}
 
 }
