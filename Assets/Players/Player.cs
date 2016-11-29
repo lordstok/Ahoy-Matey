@@ -21,12 +21,15 @@ public class Player : MonoBehaviour {
 		transform.Translate (0,0,translation);
 		transform.Rotate(0,rotation,0);
 		
-//		if (CrossPlatformInputManager.GetAxis("Horizontal")) {
-//			this.transform.position += Vector3.left * speed * Time.deltaTime;
-//		}
-//		else if (CrossPlatformInputManager.GetButtonDown("Right")) {
-//			this.transform.position += Vector3.right * speed * Time.deltaTime;
-//		}
+//		Alternative player input control code
+//
+//		private Vector3 inputValue;
+//
+//		inputValue.x = CrossPlatformInputManager.GetAxis("Horizontal");
+//		inputValue.y = 0f;
+//		inputValue.z = CrossPlatformInputManager.GetAxis("Vertical");
+//		
+//		transform.Translate (inputValue);
 
 	}
 	
