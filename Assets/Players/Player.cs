@@ -27,7 +27,6 @@ public class Player : NetworkBehaviour {
 		
 		transform.Translate (0,0,translation);
 		transform.Rotate(0,rotation,0);
-		}
 		
 //		Alternative player input control code
 //
